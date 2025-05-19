@@ -14,6 +14,7 @@ If you want to run the Python-based version (without GUI):
 
 ```
 cd Trade-Simulator
+pip install websocket-client numpy pandas PyQt5 pyqtgraph
 python main.py
 ```
 
