@@ -10,7 +10,7 @@ A trading simulator project that offers two visualization modes:
 
 ### 🐍 1. Python  Visualization
 
-If you want to run the Python-based version (without GUI):
+If you want to run the Python-based version:
 
 ```
 cd Trade-Simulator
