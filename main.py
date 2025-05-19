@@ -1,4 +1,4 @@
-
+import os
 import sys
 import json
 import time
@@ -6,6 +6,7 @@ import threading
 from datetime import datetime
 import websocket
 import numpy as np
+import subprocess
 import pandas as pd
 from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
@@ -489,7 +490,7 @@ class TradingSimulator(QMainWindow):
     def start_websocket(self):
         # Set up WebSocket connection
         asset = self.asset_combo.currentText().replace('-', '')
-        url = f"wss://ws.gomarket-cpp.goquant.io/ws/l2-orderbook/okx/{asset}"
+        url = f"wss://ws.gomarket-cpp.goquant.io/ws/l2-orderbook/okx/BTC-USDT-SWAP"
         self.ws_thread = WebSocketThread(url)
         self.ws_thread.message_received.connect(self.on_websocket_message)
         self.ws_thread.connection_error.connect(self.on_websocket_error)
@@ -622,7 +623,18 @@ class TradingSimulator(QMainWindow):
             self.ws_thread.stop()
         event.accept()
 
+def run_npm_dev():
+
+    # Run `npm run dev` inside the Frontend folder
+    current_dir = os.getcwd()  # get current directory
+    frontend_dir = os.path.join(current_dir, "Frontend")
+
+    print("Starting Frontend folder...")
+    subprocess.run([r"C:\Program Files\nodejs\npm.cmd", "run", "dev"], cwd="Frontend", check=True)
+
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     simulator = TradingSimulator()
+    # run_npm_dev()
     sys.exit(app.exec_())
