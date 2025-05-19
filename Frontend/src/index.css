@@ -1,0 +1,92 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 13%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .positive {
+    color: hsl(142, 76%, 50%);
+  }
+
+  .negative {
+    color: hsl(0, 84%, 60%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Orderbook styles */
+.orderbook-container {
+  height: 300px;
+  overflow-y: auto;
+}
+
+.ask-row {
+  background-color: rgba(220, 53, 69, 0.05);
+}
+
+.bid-row {
+  background-color: rgba(25, 135, 84, 0.05);
+}
+
+/* Performance metrics */
+.latency-indicator {
+  height: 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.latency-good {
+  background-color: hsl(142, 76%, 36%);
+}
+
+.latency-warning {
+  background-color: hsl(45, 100%, 51%);
+}
+
+.latency-critical {
+  background-color: hsl(0, 62.8%, 50.6%);
+}
