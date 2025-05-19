@@ -12,12 +12,12 @@ A trading simulator project that offers two visualization modes:
 
 If you want to run the Python-based version (without GUI):
 
-```bash
+
 cd Trade-Simulator
 python main.py
 
 
-2. Web Based Visualization
+### 🖥️ 2. Web Based Visualization
 
 cd Trade-Simulator
 cd Frontend
